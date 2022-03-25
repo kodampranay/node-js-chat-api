@@ -5,6 +5,7 @@ import userRouter from './userRoutes/user.js'
 import fileUpload from 'express-fileupload'
 import { createServer } from "http";
 import { Server } from "socket.io";
+import cors from 'cors'
 
 
 
