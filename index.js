@@ -171,7 +171,7 @@ app.use(express.json());
 
 //STATIC PATH FOR IMAGES
 app.use(express.static("public"));
-app.use("/api/uploads", express.static("uploads/webp"));
+app.use("/uploads", express.static("uploads/webp"));
 
 
 const PORT=process.env.PORT;
