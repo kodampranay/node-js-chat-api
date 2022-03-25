@@ -15,7 +15,7 @@ const router = express.Router();
 
 
 //REGISTERING WITH NUMBER
-router.post("/api/register", async (req, res) => {
+router.post("/register", async (req, res) => {
   try {
     const { number } = req.body;
     if (!number)
@@ -81,7 +81,7 @@ async function sendotp(number, otp) {
 }
 
 //LOGIN ROUTE
-router.post("/api/login", async (req, res) => {
+router.post("/login", async (req, res) => {
   try {
     const { number, otp } = req.body;
     
@@ -145,7 +145,7 @@ function generating_AuthKey(id) {
 
 //CHECKING AUTHENTICATION
 
-router.get("/api/auth", async (req, res) => {
+router.get("/auth", async (req, res) => {
   try {
 
     
@@ -235,7 +235,7 @@ async function authentication(req, res, next) {
 }
 //UPDATING PROFILE
 
-router.post("/api/updateprofile", authentication, async(req, res) => {
+router.post("/updateprofile", authentication, async(req, res) => {
   console.log('im in')
   console.log('userid with something',req.files,req.body.user_id)
 
@@ -337,7 +337,7 @@ router.post("/api/updateprofile", authentication, async(req, res) => {
 //IMAGE UPLOAD
 
 
-router.get('/api/contacts',authentication,async(req,res)=>
+router.get('/contacts',authentication,async(req,res)=>
 {
   try{
     const { user_id } = req.body;
@@ -355,7 +355,7 @@ router.get('/api/contacts',authentication,async(req,res)=>
 
 
 //SENDING REQUEST
-router.get('/api/:sid/send',authentication,async(req,res)=>
+router.get('/:sid/send',authentication,async(req,res)=>
 {
   try{
     // console.log(req.params,req.body.user_id)
@@ -402,7 +402,7 @@ router.get('/api/:sid/send',authentication,async(req,res)=>
 
 
 //ACCEPTING REQUEST
-router.get('/api/:sid/accept',authentication,async(req,res)=>
+router.get('/:sid/accept',authentication,async(req,res)=>
 {
   try{
     const{user_id}=req.body;
@@ -470,7 +470,7 @@ router.get('/api/:sid/accept',authentication,async(req,res)=>
 })
 //REJECT THE REQUEST
 
-router.get('/api/:sid/cancel',authentication,async(req,res)=>
+router.get('/:sid/cancel',authentication,async(req,res)=>
 {
   try{
     const{user_id}=req.body;
@@ -524,7 +524,7 @@ router.get('/api/:sid/cancel',authentication,async(req,res)=>
 })
 
 //getting notifictions 
-router.get('/api/notifications',authentication,async(req,res)=>
+router.get('/notifications',authentication,async(req,res)=>
 {
   try{
     const {user_id}=req.body;
@@ -541,7 +541,7 @@ router.get('/api/notifications',authentication,async(req,res)=>
 
 //GETTING CHAT history
 
-router.get('/api/:sid/chat',authentication,async(req,res)=>
+router.get('/:sid/chat',authentication,async(req,res)=>
 {
   try{
     const {user_id}=req.body;
@@ -563,7 +563,7 @@ router.get('/api/:sid/chat',authentication,async(req,res)=>
 })
 
 //SENDING MESSAGE TO FRIEND
-router.put('/api/:sid/sendmessage',authentication,async(req,res)=>
+router.put('/:sid/sendmessage',authentication,async(req,res)=>
 {
   try{
     // time conversation
