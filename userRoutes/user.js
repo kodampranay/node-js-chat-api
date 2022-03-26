@@ -244,7 +244,7 @@ router.post("/updateprofile", authentication, async(req, res) => {
     const { name, user_id } = req.body;
 
     if (!req.files || Object.keys(req.files).length === 0) {
-      return res.status(400).send({ status: 0, message: "no files there" });
+      return res.status(200).send({ status: 0, message: "no files there" });
     }
     let { sampleFile } = req.files;
     
