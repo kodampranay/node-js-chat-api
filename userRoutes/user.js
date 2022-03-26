@@ -288,7 +288,7 @@ router.post("/updateprofile", authentication, async(req, res) => {
             destination: "./uploads/webp/",
             plugins: [
               imageminWebp({
-                  quality: 80
+                  quality: 50
                 //   ,
                 //   resize: {
                 //     width: 1000,
