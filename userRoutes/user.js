@@ -296,10 +296,10 @@ router.post("/updateprofile", authentication, async(req, res) => {
                 //   }
               }),
             ],
-          }).then(() => {
+          }).then(async() => {
             console.log("Images Converted Successfully!!!");
             
-            var res_image= await axios.post('https://songsapi.000webhostapp.com/',{url:req.protocol + "://" + req.get("host") + upload_path+".webp"},{headers:{"Content-Type":"application/json"}}).then((response)=>{
+            var res_image= await axios.post('https://songsapi.000webhostapp.com/',{url:req.protocol + "://" + req.get("host") + upload_path+".webp"},{Headers:{"Content-Type":"application/json"}}).then((response)=>{
               console.log(response)})
 
 
