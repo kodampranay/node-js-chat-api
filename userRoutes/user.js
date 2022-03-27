@@ -575,11 +575,11 @@ router.put('/:sid/sendmessage',authentication,async(req,res)=>
 {
   try{
     // time conversation
-    const Date = new Date().toLocaleString('en-US', {
+    const nDate = new Date().toLocaleString('en-US', {
       timeZone: 'Asia/Calcutta'
     });
 
-     const mtime=await formatAMPM(Date);
+     const mtime=await formatAMPM(nDate);
      
     
     const {user_id,msg}=req.body;
