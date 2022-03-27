@@ -15,6 +15,13 @@ app.use(cors({origin: '*',methods: ['GET','POST','DELETE','UPDATE','PUT','PATCH'
 app.use(express.json())
 
 
+const nDate = new Date().toLocaleString('en-US', {
+    timeZone: 'Asia/Calcutta'
+  });
+    
+  console.log(nDate);
+
+
 
 //online users
 
